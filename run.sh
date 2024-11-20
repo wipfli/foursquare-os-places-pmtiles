@@ -8,7 +8,7 @@ COPY (
         'Feature' AS type,
         json_object(
             'type', 'Point',
-            'coordinates', [COALESCE(longitude, 0), COALESCE(latitude, 0)]
+            'coordinates', [longitude, latitude]
         ) as geometry,
         json_object(
             'fsq_place_id', fsq_place_id,
@@ -35,5 +35,6 @@ COPY (
             'dt', dt
         ) AS properties
     FROM read_parquet('s3://fsq-os-places-us-east-1/release/dt=2024-11-19/places/parquet/*')
+    WHERE longitude IS NOT NULL AND latitude IS NOT NULL
 ) TO STDOUT (FORMAT json);
 " | tippecanoe -o foursquare-os-places-2024-11-20.pmtiles --force -l place -rg --drop-densest-as-needed --extend-zooms-if-still-dropping --maximum-tile-bytes=2500000 --progress-interval=10
