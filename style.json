@@ -6,6 +6,11 @@
             "attribution": "<a href=\"https://github.com/protomaps/basemaps\">Protomaps</a> © <a href=\"https://openstreetmap.org\">OpenStreetMap</a>",
             "url": "pmtiles://https://oliverwipfli.ch/data/v4.pmtiles"
         },
+        "foursquare-1M": {
+            "type": "vector",
+            "attribution": "Foursquare <a href=\"https://github.com/wipfli/foursquare-os-places-pmtiles/\">(Download)</a>",
+            "url": "pmtiles://https://oliverwipfli.ch/data/foursquare-os-places-1M-2024-11-20.pmtiles"
+        },
         "foursquare": {
             "type": "vector",
             "attribution": "Foursquare <a href=\"https://github.com/wipfli/foursquare-os-places-pmtiles/\">(Download)</a>",
@@ -7616,10 +7621,45 @@
             }
         },
         {
+            "id": "foursquare-1M",
+            "type": "circle",
+            "source": "foursquare-1M",
+            "source-layer": "place",
+            "maxzoom": 11,
+            "paint": {
+                "circle-color": "#2dd9fe",
+                "circle-opacity": [
+                    "interpolate",
+                    ["linear"],
+                    ["zoom"],
+                    6,
+                    0.5,
+                    11,
+                    0.5,
+                    14,
+                    1.0
+                ],
+                "circle-radius": [
+                    "interpolate",
+                    ["linear"],
+                    ["zoom"],
+                    6,
+                    1,
+                    11,
+                    3,
+                    16,
+                    4,
+                    18,
+                    8
+                ]
+            }
+        },
+        {
             "id": "foursquare",
             "type": "circle",
             "source": "foursquare",
             "source-layer": "place",
+            "minzoom": 11,
             "paint": {
                 "circle-color": "#2dd9fe",
                 "circle-opacity": [

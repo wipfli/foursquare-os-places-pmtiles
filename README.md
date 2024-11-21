@@ -3,7 +3,6 @@ All 100M+ open source places of Foursquare in a single PMTiles file
 
 Read the [Foursquare blog post...](https://location.foursquare.com/resources/blog/products/foursquare-open-source-places-a-new-foundational-dataset-for-the-geospatial-community/)
 
-**NOT FINISHED YET...** The tiles we have at the moment were made with `LIMIT 10000000`. Full dataset to follow...
 
 ## Demo
 
@@ -15,7 +14,7 @@ https://wipfli.github.io/foursquare-os-places-pmtiles
 
 ## Download
 
-[foursquare-os-places-2024-11-20.pmtiles](https://oliverwipfli.ch/data/foursquare-os-places-2024-11-20.pmtiles) (3.6 GB). not full dataset yet, only first 10M entries...
+[foursquare-os-places-2024-11-20.pmtiles](https://oliverwipfli.ch/data/foursquare-os-places-2024-11-20.pmtiles) (22 GB)
 
 ## Steps
 
