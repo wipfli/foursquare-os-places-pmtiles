@@ -26,3 +26,6 @@ Run `./run.sh`. This calls duckdb and gets all the rows, structures them into ge
 
 Inspired by @bdon's [Overture places script](https://github.com/OvertureMaps/overture-tiles/blob/main/scripts/2024-04-16-beta/places.sh). Uses @msbarry's [Overture html viewer](https://github.com/msbarry/planetiler-overture-demo/blob/main/index.html).
 
+## Extract GeoJSON for a Bounding Box
+
+[`rapperswil-geojson.sh`](rapperswil-geojson.sh) is an example how to extract data with DuckDB for a given bounding box, here for the town [Rapperswil](https://wipfli.github.io/foursquare-os-places-pmtiles/#map=14/47.22803/8.82657/0/2) in Switzerland. It uses a `WHERE latitude BETWEEN minLat AND maxLat`...
