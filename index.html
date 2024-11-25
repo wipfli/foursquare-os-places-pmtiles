@@ -209,7 +209,7 @@
                 [2 * step + offset, lat],
             ];
 
-            var duration = 8000;
+            var duration = index === 0 ? 0 : 8000;
 
             map.easeTo({
                 center: locations[index % locations.length], 
