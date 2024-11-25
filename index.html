@@ -198,6 +198,27 @@
 
         map.addControl(new maplibregl.NavigationControl());
         map.addControl(new maplibregl.GlobeControl());
+        map.setVerticalFieldOfView(5);
+        function animateMap(index = 0) {
+            const lat = 25;
+            const step = 360 / 3;
+            const offset = -150;
+            const locations = [
+                [0 * step + offset, lat],
+                [1 * step + offset, lat],
+                [2 * step + offset, lat],
+            ];
+
+            var duration = 8000;
+
+            map.easeTo({
+                center: locations[index % locations.length], 
+                duration,
+                easing: (time) => time,
+            });
+
+            setTimeout(() => animateMap(index + 1), duration);
+        }
 
         var popup = new maplibregl.Popup({
             closeButton: false,
